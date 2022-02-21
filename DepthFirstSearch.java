@@ -79,10 +79,22 @@ public final class DepthFirstSearch
             count++;
             System.out.print("The value of the node is "+node.getData()+", the number of node(s) visited is "+count);
             System.out.println(" and the height of this tree is "+height(node)+".");
+            if (isLeaf(node))
+            	return;
             depthFirstSearch(node.getlChild());
             depthFirstSearch(node.getrChild());
         }
     }//end depthFirstSearch
+    
+    /**
+     * 
+     * @param node, the node to determine if it has no children
+     * @return true if the node is leaf
+     */
+    private boolean isLeaf(Node node)
+    {
+    	return node.getlChild() == null && node.getrChild() == null;
+    }//end isLeaf
     
     /**
      * sets count (the number of nodes traverse) to 0
