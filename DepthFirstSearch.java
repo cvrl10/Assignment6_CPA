@@ -61,7 +61,7 @@ public final class DepthFirstSearch
      * @return the height of a subtree rooted at the argument
      * @param root, the root of this subtree
      */ 
-    private int height(Node root)//private
+    private int height(Node root)
     {
         if (root!= null)
             return 1 + Math.max(height(root.getlChild()), height(root.getrChild()));
